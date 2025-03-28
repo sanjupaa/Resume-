@@ -1,0 +1,316 @@
+/* Global reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #111;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Neon Glow Text Effect */
+@keyframes neonGlow {
+    0% {
+        text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 40px #ff0080;
+    }
+    50% {
+        text-shadow: 0 0 5px #00f5ff, 0 0 10px #00f5ff, 0 0 20px #00f5ff, 0 0 40px #00f5ff;
+    }
+    100% {
+        text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 40px #ff0080;
+    }
+}
+
+/* Main Portfolio Wrapper */
+.portfolio-wrapper {
+    width: 80%;
+    margin: 50px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #111, #222);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    animation: slideUp 1s ease-in-out;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(60px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Title Section */
+.portfolio-name {
+    font-size: 3rem;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 2px;
+    animation: neonGlow 1.5s infinite alternate;
+    text-transform: uppercase;
+    padding: 10px 0;
+}
+
+.portfolio-tagline {
+    font-size: 1.6rem;
+    text-align: center;
+    color: #b8b8b8;
+    letter-spacing: 1.5px;
+    font-style: italic;
+    margin-bottom: 30px;
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2rem;
+    color: #00f5ff;
+    text-align: center;
+    letter-spacing: 1.2px;
+    position: relative;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    background-color: #00f5ff;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Personal Info Section */
+.personal-info,
+.education-info,
+.additional-info {
+    margin: 20px auto;
+}
+
+.personal-info li,
+.education-info li,
+.additional-info li {
+    font-size: 1.2rem;
+    color: #bbb;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.8;
+    font-weight: 300;
+    animation: fadeIn 1.5s ease-out;
+    transition: all 0.3s ease;
+}
+
+.personal-info li::before,
+.education-info li::before,
+.additional-info li::before {
+    content: "\2022"; /* Bullet Point */
+    color: #00f5ff;
+    font-size: 1.8rem;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.personal-info li:hover,
+.education-info li:hover,
+.additional-info li:hover {
+    transform: translateX(15px);
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 245, 255, 0.4);
+    cursor: pointer;
+}
+
+/* Skills Section */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    padding: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+.skill-item {
+    background: linear-gradient(135deg, #00f5ff, #ff0080);
+    padding: 20px 30px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 1.3rem;
+    margin: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 245, 255, 0.5);
+    background: linear-gradient(135deg, #ff0080, #00f5ff);
+}
+
+.skill-item::before {
+    content: "\2022";
+    font-size: 1.5rem;
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+}
+
+/* Project Gallery Section */
+.projects-gallery {
+    margin-top: 40px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.project-image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    border: 2px solid #00f5ff;
+    position: relative;
+}
+
+.project-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 245, 255, 0.6);
+    border: 2px solid #ff0080;
+}
+
+/* Footer Section */
+.portfolio-footer {
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+}
+
+.resume-button {
+    background: linear-gradient(135deg, #ff0080, #00f5ff);
+    padding: 12px 30px;
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 245, 255, 0.4);
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+.resume-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 245, 255, 0.6);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .portfolio-wrapper {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .portfolio-name {
+        font-size: 2.5rem;
+    }
+
+    .portfolio-tagline {
+        font-size: 1.4rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .personal-info li,
+    .education-info li,
+    .additional-info li {
+        font-size: 1rem;
+    }
+
+    .skills-list {
+        flex-direction: column;
+    }
+
+    .skill-item {
+        font-size: 1.2rem;
+    }
+
+    .project-image {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-wrapper {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .portfolio-name {
+        font-size: 2rem;
+    }
+
+    .portfolio-tagline {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .skills-list {
+        gap: 10px;
+    }
+
+    .skill-item {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .project-image {
+        max-width: 100%;
+        height: 180px;
+    }
+
+    .resume-button {
+        font-size: 1rem;
+        padding: 8px 18px;
+    }
+}
